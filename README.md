@@ -13,4 +13,4 @@ yarn install @ambientlight/bs-aws-amplify
 # if yarn fails with integrity failure, please add dependency manually to package.json and run the following
 yarn --update-checksums
 ```
-
+Then add `@ambientlight/bs-aws-amplify` into `bs-dependencies` in your project `bsconfig.json`
