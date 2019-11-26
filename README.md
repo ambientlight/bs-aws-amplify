@@ -14,3 +14,35 @@ yarn install @ambientlight/bs-aws-amplify
 yarn --update-checksums
 ```
 Then add `@ambientlight/bs-aws-amplify` into `bs-dependencies` in your project `bsconfig.json`
+
+## Configuring
+
+1. after running `amplify init` or `amplify configure` or `amplify env add` `aws-exports.js` should be generated in the specified src folder (as defined in `amplify/.config/project-config.json`)
+2. add bindings for `aws-exports.js` as `AWSExports.re` given that source folder is `src/`
+
+  ```reason
+  [@bs.deriving abstract]
+  type t = {
+    aws_project_region: string,
+    aws_cognito_identity_pool_id: string,
+    aws_cognito_region: string,
+    aws_user_pools_id: string,
+    aws_user_pools_web_client_id: string,
+    aws_content_delivery_bucket: string,
+    aws_content_delivery_url: string,
+    aws_appsync_graphqlEndpoint: string,
+    aws_appsync_region: string,
+    aws_appsync_authenticationType: string,
+    aws_appsync_apiKey: string
+  };
+
+  [@bs.module "src/aws-exports"][@bs.val]
+  external config: t = "default";
+  ```
+
+3. then in your entry (often `Index.re`) run `AWSAmplify.Amplify.configure`:
+
+  ```reason
+  open AWSAmplify
+  Amplify.amplify |. Amplify.configure(AWSExports.config);
+  ```
