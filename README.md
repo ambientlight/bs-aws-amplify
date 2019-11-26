@@ -40,7 +40,7 @@ Then add `@ambientlight/bs-aws-amplify` into `bs-dependencies` in your project `
   external config: t = "default";
   ```
 
-3. then in your entry (often `Index.re`) run `AWSAmplify.Amplify.configure`:
+3. then in your entry (often `Index.re`) run `Amplify.configure`:
 
   ```reason
   open AWSAmplify
