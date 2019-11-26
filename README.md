@@ -10,7 +10,7 @@ before installing, in your project directory, run:
 ```bash
 echo "@ambientlight:registry=https://npm.pkg.github.com" >> .npmrc
 yarn install @ambientlight/bs-aws-amplify
-# if yarn fails with integrity failure, please run the following
+# if yarn fails with integrity failure, please add dependency manually to package.json and run the following
 yarn --update-checksums
 ```
 
