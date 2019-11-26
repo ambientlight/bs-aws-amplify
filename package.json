@@ -1,0 +1,38 @@
+{
+    "name": "@ambientlight/bs-aws-amplify",
+    "version": "0.1.0",
+    "description": "buckleScript bindings for AWS Amplify client library",
+    "scripts": {
+        "build": "./node_modules/.bin/bsb -make-world",
+        "clean": "./node_modules/.bin/bsb -clean",
+        "dev": "./node_modules/.bin/bsb -make-world -w",
+        "docs": "bsdoc build -v --debug AWSAmplify",
+        "test": "./node_modules/.bin/jest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ambientlight/bs-aws-amplify.git"
+    },
+    "keywords": [
+        "pixi",
+        "reason",
+        "reasonml",
+        "bucklescript"
+    ],
+    "author": "ambientlight",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ambientlight/bs-aws-amplify/issues"
+    },
+    "homepage": "https://github.com/ambientlight/bs-aws-amplify#readme",
+    "devDependencies": {
+        "@glennsl/bs-jest": "^0.4.9",
+        "bs-platform": "^5.2.1",
+        "jest": "^24.9.0",
+        "reason-cli": "^3.3.3-macos-1"
+    },
+    "dependencies": {
+        "aws-amplify": "^1.2.4"
+    },
+    "peerDependencies": {}
+}
